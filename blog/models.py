@@ -25,7 +25,7 @@ class Post(models.Model): # This defines our model (an object)
             blank=True, null=True)
 
     def publish(self): # These are methods, the things the class can do
-    # Def means to that this is a function/method
+    # Def means that this is a function/method
     # publish is the name of the method - naming rules are lowercase and underscores
         self.published_date = timezone.now()
         self.save()
