@@ -15,3 +15,8 @@ def post_list(request): # function
     # the {} are where we add things for the template to use
     # We can give them names which is the string in the ''.
     return render(request, 'blog/post_list.html', {'posts': posts})
+
+from django.shortcuts import render, get_object_or_404
+def post_detail(request, pk):
+    post = get_object_or_404(Post, pk=pk)
+    return render(request, 'blog/post_detail.html', {'post': post})
