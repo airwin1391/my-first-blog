@@ -1,0 +1,15 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    <h1>New post</h1>
+    <form method="POST" class="post-form">{% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="save btn-default">Save</button>
+    </form>
+
+{% endblock %}
+
+
+<!-- To display the form we use {{ form.as_p }} -->
+<!-- {% csrf_token %} is used to make your forms secure, must
+add this in or Django won't work, will say forbidden request aborted -->
